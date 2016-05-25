@@ -32,6 +32,8 @@ function game.process_keys(key)
   elseif key == ']' and enemy.difficulty < 1 then       -- increase the difficulty
     enemy.difficulty = enemy.difficulty * 10
     player.bulletLim = player.bulletLim - 1
+  elseif key == 'f' then                                -- fullscreen/windowed
+    game.switch_fullscreen()
   end
   cheats.keyhook(key)
 end
@@ -40,4 +42,10 @@ function game.display_fps()
   if love.timer.getFPS() > 9 then
     love.graphics.print(love.timer.getFPS(), screenWidth - 25, screenHeight - 20)
   end
+end
+
+function game.switch_fullscreen()
+  fullscreenMode = not fullscreenMode
+  love.window.setFullscreen(fullscreenMode)
+  screenWidth, screenHeight = love.graphics.getDimensions()
 end

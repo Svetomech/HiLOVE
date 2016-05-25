@@ -6,8 +6,8 @@ require 'cheats'
 require 'game'
 
 function love.load()
-  screenWidth = love.graphics.getWidth()
-  screenHeight = love.graphics.getHeight()
+  screenWidth, screenHeight = love.graphics.getDimensions()
+  fullscreenMode = love.window.getFullscreen()
   
   --Loading fonts
   gameFont = love.graphics.newFont("ARCADECLASSIC.TTF",20)
