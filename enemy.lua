@@ -98,12 +98,10 @@ function enemy.enemy_collide()
          va.x < v.x + enemy.width and
          va.y + enemy.height > v.y and
          va.y < v.y + enemy.height then
-          va.xvel = va.xvel - math.abs(va.x + enemy.width - v.x)
-          v.xvel = v.xvel + math.abs(va.x + enemy.width - v.x)
-          --оттолкнуть va влево, v вправо
-          va.yvel = va.yvel - math.abs(va.y + enemy.height - v.y)
-          v.yvel = v.yvel + math.abs(va.y + enemy.height - v.y)
-          --va - вверх, v - вниз
+          va.xvel = va.xvel + math.abs(va.x + enemy.width - v.x)
+          v.xvel = v.xvel - math.abs(va.x + enemy.width - v.x)
+          va.yvel = va.yvel + math.abs(va.y + enemy.height - v.y)
+          v.yvel = v.yvel - math.abs(va.y + enemy.height - v.y)
       end
     end
   end
